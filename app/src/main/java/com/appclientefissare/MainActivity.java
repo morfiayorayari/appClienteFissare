@@ -16,7 +16,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.appclientefissare.activity.CategoriaproveedorFragment;
 import com.appclientefissare.activity.CategoriaservicioFragment;
+import com.appclientefissare.activity.ProveedorFragment;
 import com.appclientefissare.activity.ServicioFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -89,14 +91,24 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_categoria_servicio) {
+
             fragment = new CategoriaservicioFragment();
             getSupportActionBar().setTitle("Categoria Servicio");
+
         } else if (id == R.id.nav_servicio) {
+
             fragment = new ServicioFragment();
             getSupportActionBar().setTitle("Servicio");
+
         } else if (id == R.id.nav_categoria_proveedor) {
 
+            fragment = new CategoriaproveedorFragment();
+            getSupportActionBar().setTitle("Categoria Proveedor");
+
         } else if (id == R.id.nav_proveedor) {
+
+            fragment = new ProveedorFragment();
+            getSupportActionBar().setTitle("Proveedor");
 
         } else if (id == R.id.nav_nuevo_pedido) {
 
