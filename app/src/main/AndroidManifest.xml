@@ -35,6 +35,8 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.PreregisterActivity" />
+        <activity android:name=".activity.PedidoActivity" />
+        <activity android:name=".activity.RegisterProveedorActivity"></activity>
     </application>
 
 </manifest>

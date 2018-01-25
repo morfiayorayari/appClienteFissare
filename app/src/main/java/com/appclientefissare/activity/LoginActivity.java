@@ -18,7 +18,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import com.appclientefissare.MainActivity;
-import com.appclientefissare.activity.RegisterActivity;
 import com.appclientefissare.R;
 
 import java.util.HashMap;
@@ -32,7 +31,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText emailBox, passwordBox;
     Button loginButton;
     TextView registerLink;
-    String URL = "http://192.168.1.103:8080/appServiHogar/srv/web/login";
+    //String URL = "http://192.168.1.108:8080/appServiHogar/srv/web/login";
+    String URL = "http://198.58.96.144:8080/appServiHogar/srv/web/login";
 
 
     @Override
@@ -45,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = (Button)findViewById(R.id.loginButton);
         registerLink = (TextView)findViewById(R.id.registerLink);
 
+        getSupportActionBar().setTitle("Ingreso al Sistema");
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,18 +54,18 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String s) {
                         if(s.equals("true")){
-                            Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Login Exitoso", Toast.LENGTH_LONG).show();
 
                             startActivity(new Intent(LoginActivity.this,MainActivity.class));
                         }
                         else{
-                            Toast.makeText(LoginActivity.this, "Incorrect Details", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, "Datos Incorrectos", Toast.LENGTH_LONG).show();
                         }
                     }
                 },new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        Toast.makeText(LoginActivity.this, "Some error occurred -> "+volleyError, Toast.LENGTH_LONG).show();;
+                        Toast.makeText(LoginActivity.this, "Ocurrió un error -> "+volleyError, Toast.LENGTH_LONG).show();;
                     }
                 }) {
                     @Override
@@ -84,13 +86,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, PreregisterActivity.class));
-                //startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
         });
-
-        getSupportActionBar().setTitle("Ingreso al Sistema");
     }
-
-
-
 }
