@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="#929ED4"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.appclientefissare.activity.LoginClienteActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:srcCompat="@drawable/fissarelogo"
+        android:id="@+id/imageView2" />
+
+
+    <EditText
+        android:id="@+id/emailBoxCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/passwordBoxCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/loginButtonCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresar"
+        android:textSize="25dp"
+        android:layout_marginTop="10dp"/>
+
+
+    <TextView
+        android:id="@+id/registerLinkCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No tienes cuenta? \n Registrate aqui"
+        android:textSize="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textColor="#0D47A1"/>
+
+
+
+</LinearLayout>

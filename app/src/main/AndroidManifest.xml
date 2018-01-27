@@ -46,7 +46,12 @@
             android:name=".ClientActivity"
             android:label="@string/title_activity_client"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.IngresarcomoActivity"></activity>
+        <activity android:name=".activity.IngresarcomoActivity" />
+        <activity android:name=".activity.LoginClienteActivity" />
+        <activity
+            android:name=".activity.ProveedorActivity"
+            android:label="@string/title_activity_proveedor"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
