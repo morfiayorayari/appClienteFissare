@@ -33,7 +33,7 @@ public class PreregisterActivity extends AppCompatActivity {
         _clienteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(PreregisterActivity.this, RegisterClienteActivity.class));
+                startActivity(new Intent(PreregisterActivity.this, RegisterClientActivity.class));
             }
         });
 

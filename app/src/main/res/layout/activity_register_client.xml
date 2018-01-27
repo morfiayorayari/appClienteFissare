@@ -11,12 +11,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.appclientefissare.activity.RegisterClienteActivity">
-
+    tools:context="com.appclientefissare.activity.RegisterClientActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,14 +24,11 @@
             android:orientation="vertical">
 
 
-
-
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 app:srcCompat="@drawable/fissareicon" />
-
 
 
             <LinearLayout
@@ -45,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp" />
                 <EditText
-                    android:id="@+id/register_cliente_cedula"
+                    android:id="@+id/register_client_cedula"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -66,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp" />
                 <EditText
-                    android:id="@+id/register_cliente_name"
+                    android:id="@+id/register_client_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
@@ -87,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp" />
                 <EditText
-                    android:id="@+id/register_cliente_direccion"
+                    android:id="@+id/register_client_direccion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName"
@@ -108,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp" />
                 <EditText
-                    android:id="@+id/register_cliente_telfijo"
+                    android:id="@+id/register_client_telfijo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
@@ -129,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp" />
                 <EditText
-                    android:id="@+id/register_cliente_telmovil"
+                    android:id="@+id/register_client_telmovil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="phone"
@@ -149,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp" />
                 <EditText
-                    android:id="@+id/register_cliente_email"
+                    android:id="@+id/register_client_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
@@ -157,8 +154,20 @@
                     android:hint="Ej: jperez@dominio.com" />
             </LinearLayout>
 
+            <Button
+                android:id="@+id/accept_client"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aceptar"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"/>
+
+
 
         </LinearLayout>
 
+
     </ScrollView>
+
 </LinearLayout>

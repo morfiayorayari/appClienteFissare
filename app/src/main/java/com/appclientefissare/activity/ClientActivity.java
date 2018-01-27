@@ -1,4 +1,4 @@
-package com.appclientefissare;
+package com.appclientefissare.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,19 +16,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.appclientefissare.R;
 import com.appclientefissare.activity.CategoriaproveedorFragment;
 import com.appclientefissare.activity.CategoriaservicioFragment;
-import com.appclientefissare.activity.PedidoFragment;
+import com.appclientefissare.activity.CategoryServiceFragment;
 import com.appclientefissare.activity.ProveedorFragment;
 import com.appclientefissare.activity.ServicioFragment;
 
-public class MainActivity extends AppCompatActivity
+public class ClientActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_client);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -78,45 +79,42 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        Fragment fragment = null;
+        Fragment fragmentClient = null;
 
         int id = item.getItemId();
 
         if (id == R.id.nav_categoria_servicio) {
 
-            fragment = new CategoriaservicioFragment();
+            fragmentClient = new CategoryServiceFragment();
             getSupportActionBar().setTitle("Categoria Servicio");
 
         } else if (id == R.id.nav_servicio) {
 
-            fragment = new ServicioFragment();
-            getSupportActionBar().setTitle("Servicio");
+            //fragmentClient = new CategoryServiceFragment();
+            //getSupportActionBar().setTitle("Servicio");
 
         } else if (id == R.id.nav_categoria_proveedor) {
 
-            fragment = new CategoriaproveedorFragment();
-            getSupportActionBar().setTitle("Categoria Proveedor");
+            //fragmentClient = new CategoryServiceFragment();
+            //getSupportActionBar().setTitle("Categoria Proveedor");
 
         } else if (id == R.id.nav_proveedor) {
 
-            fragment = new ProveedorFragment();
-            getSupportActionBar().setTitle("Proveedor");
+            //fragmentClient = new CategoryServiceFragment();
+            //getSupportActionBar().setTitle("Proveedor");
 
         } else if (id == R.id.nav_nuevo_pedido) {
-
-            fragment = new PedidoFragment();
-            getSupportActionBar().setTitle("Pedidos");
 
         } else if (id == R.id.nav_estado_pedido) {
 
         }
 
 
-        if(fragment != null){
+        if(fragmentClient != null){
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction ft = fragmentManager.beginTransaction();
 
-            ft.replace(R.id.screen_area, fragment);
+            ft.replace(R.id.screen_area_cliente, fragmentClient);
 
             ft.commit();
         }
@@ -126,4 +124,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

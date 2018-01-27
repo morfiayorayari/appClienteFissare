@@ -14,7 +14,6 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
-import com.appclientefissare.MainActivity;
 import com.appclientefissare.R;
 
 import org.json.JSONException;
@@ -23,11 +22,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterProveedorActivity extends AppCompatActivity {
+public class RegisterClientActivity extends AppCompatActivity {
 
-    private static final String TAG = "RegisterProveedor";
-    //private static final String URL_FOR_REGISTRATION = "http://192.168.1.103:8080/appServiHogar/srv/web/registro";
-    private static final String URL_FOR_REGISTRATION = "http://fissare.ayniwork.com/appServiHogar/srv/web/registro";
+    private static final String TAG = "RegisterClient";
+    private static final String URL_FOR_REGISTRATION = "http://172.16.220.241:8080/appServiHogar/srv/web/registro";
     ProgressDialog progressDialog;
 
     private EditText _cedulaText;
@@ -36,38 +34,36 @@ public class RegisterProveedorActivity extends AppCompatActivity {
     private EditText _telfijoText;
     private EditText _movilText;
     private EditText _emailText;
-    private EditText _experienciaText;
-    private EditText _passwordText;
+
     private Button _acceptButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_proveedor);
+        setContentView(R.layout.activity_register_client);
 
-        getSupportActionBar().setTitle("Registro - Nuevo Proveedor");
+        getSupportActionBar().setTitle("Registro - Nuevo Cliente");
 
         //Progres Dialog
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
-        _cedulaText = (EditText) findViewById(R.id.register_proveedor_cedula);
-        _nombresText = (EditText) findViewById(R.id.register_proveedor_name);
-        _direccionText = (EditText) findViewById(R.id.register_proveedor_direccion);
-        _telfijoText = (EditText) findViewById(R.id.register_proveedor_telfijo);
-        _movilText = (EditText) findViewById(R.id.register_proveedor_telmovil);
-        _emailText = (EditText) findViewById(R.id.register_proveedor_email);
-        _experienciaText = (EditText) findViewById(R.id.register_proveedor_experiencia);
-        _passwordText = (EditText) findViewById(R.id.register_proveedor_password);
-        _acceptButton = (Button) findViewById(R.id.accept_proveedor);
+        _cedulaText = (EditText) findViewById(R.id.register_client_cedula);
+        _nombresText = (EditText) findViewById(R.id.register_client_name);
+        _direccionText = (EditText) findViewById(R.id.register_client_direccion);
+        _telfijoText = (EditText) findViewById(R.id.register_client_telfijo);
+        _movilText = (EditText) findViewById(R.id.register_client_telmovil);
+        _emailText = (EditText) findViewById(R.id.register_client_email);
+
+        _acceptButton = (Button) findViewById(R.id.accept_client);
 
 
         _acceptButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 registro();
-                startActivity(new Intent(RegisterProveedorActivity.this, MainActivity.class));
-                //Toast.makeText(RegisterProveedorActivity.this, "Registro Exitoso", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(RegisterClientActivity.this, ClientActivity.class));
+                //Toast.makeText(RegisterClientActivity.this, "Registro Exitoso", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -76,21 +72,18 @@ public class RegisterProveedorActivity extends AppCompatActivity {
 
 
     private void registro() {
-        registroProveedor(
+        registroClient(
                 _cedulaText.getText().toString(), _nombresText.getText().toString(),
                 _direccionText.getText().toString(), _telfijoText.getText().toString(),
-                _movilText.getText().toString(), _emailText.getText().toString(),
-                _experienciaText.getText().toString(), _passwordText.getText().toString()
-                );
+                _movilText.getText().toString(), _emailText.getText().toString()
+        );
     }
 
 
 
 
-
-    private void registroProveedor(final String cedula, final String nombres, final String direccion,
-                                   final String telfijo, final String telmovil, final String email,
-                                   final String experiencia, final String password){
+    private void registroClient(final String cedula, final String nombres, final String direccion,
+                                   final String telfijo, final String telmovil, final String email){
 
         String cancel_req_tag = "register";
 
@@ -115,7 +108,7 @@ public class RegisterProveedorActivity extends AppCompatActivity {
 
                         // Launch register activity
                         Intent intent = new Intent(
-                                RegisterProveedorActivity.this, MainActivity.class);
+                                RegisterClientActivity.this, ClientActivity.class);
                         startActivity(intent);
                         finish();
                     } else {
@@ -147,13 +140,12 @@ public class RegisterProveedorActivity extends AppCompatActivity {
                 params.put("telfijo", telfijo);
                 params.put("telmovil", telmovil);
                 params.put("email", email);
-                params.put("experiencia", experiencia);
-                params.put("password", password);
                 return params;
             }
         };
         // Adding request to request queue
         AppSingleton.getInstance(getApplicationContext()).addToRequestQueue(strReq, cancel_req_tag);
+
 
     }//end registroProveedor() method
 
@@ -169,6 +161,7 @@ public class RegisterProveedorActivity extends AppCompatActivity {
         if (progressDialog.isShowing())
             progressDialog.dismiss();
     }
+
 
 
 }

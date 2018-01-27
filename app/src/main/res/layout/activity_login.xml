@@ -18,15 +18,15 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         app:srcCompat="@drawable/fissarelogo"
-        android:id="@+id/imageView2"
-        android:layout_marginTop="15dp"/>
+        android:id="@+id/imageView2" />
 
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        android:id="@+id/emailBox"/>
+        android:id="@+id/emailBox"
+        android:inputType="textEmailAddress"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -49,8 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="No tienes cuenta? \n Registrate aqui"
-        android:textSize="20dp"
-        android:layout_marginTop="30dp"
+        android:textSize="15dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:id="@+id/registerLink"
         android:textColor="#0D47A1"/>
