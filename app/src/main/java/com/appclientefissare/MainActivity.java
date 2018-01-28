@@ -77,22 +77,50 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
+        Fragment fragment = null;
+
         int id = item.getItemId();
 
         if (id == R.id.nav_categoria_servicio) {
-            // Handle the camera action
+
+            fragment = new CategoriaservicioFragment();
+            getSupportActionBar().setTitle("Categoria Servicio");
+
         } else if (id == R.id.nav_servicio) {
+
+            fragment = new ServicioFragment();
+            getSupportActionBar().setTitle("Servicio");
 
         } else if (id == R.id.nav_categoria_proveedor) {
 
+            fragment = new CategoriaproveedorFragment();
+            getSupportActionBar().setTitle("Categoria Proveedor");
+
         } else if (id == R.id.nav_proveedor) {
 
+            fragment = new ProveedorFragment();
+            getSupportActionBar().setTitle("Proveedor");
+
         } else if (id == R.id.nav_nuevo_pedido) {
+
+            fragment = new PedidoFragment();
+            getSupportActionBar().setTitle("Pedidos");
 
         } else if (id == R.id.nav_estado_pedido) {
 
         }
+
+
+        if(fragment != null){
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+
+            ft.replace(R.id.screen_area, fragment);
+
+            ft.commit();
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = (Button)findViewById(R.id.loginButton);
         registerLink = (TextView)findViewById(R.id.registerLink);
 
-        getSupportActionBar().setTitle("Ingreso al Sistema (Proveedor)");
+        getSupportActionBar().setTitle("Ingreso al Sistema");
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(s.equals("true")){
                             Toast.makeText(LoginActivity.this, "Login Exitoso", Toast.LENGTH_LONG).show();
 
-                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
                         }
                         else{
                             Toast.makeText(LoginActivity.this, "Datos Incorrectos", Toast.LENGTH_LONG).show();
@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, RegisterProveedorActivity.class));
+                startActivity(new Intent(LoginActivity.this, PreregisterActivity.class));
             }
         });
     }
