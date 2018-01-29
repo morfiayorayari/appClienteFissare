@@ -15,38 +15,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.SplashActivity">
+
+        <activity android:name=".activity.init.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.PreregisterActivity" />
-        <activity android:name=".activity.PedidoActivity" />
-        <activity android:name=".activity.RegisterProveedorActivity" />
-        <activity android:name=".activity.RegisterClientActivity" />
-        <activity
-            android:name=".activity.ClienteActivity"
-            android:label="@string/title_activity_cliente"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ClientActivity"
+            android:name=".activity.ClientActivity"
             android:label="@string/title_activity_client"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.IngresarcomoActivity"></activity>
+
+        <activity
+            android:name=".activity.ProveedorActivity"
+            android:label="@string/title_activity_proveedor"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".activity.init.IngresarcomoActivity" />
+
+        <activity android:name=".activity.init.LoginProveedorActivity" />
+        <activity android:name=".activity.init.LoginClienteActivity" />
+
+        <activity android:name=".activity.init.RegisterProveedorActivity" />
+        <activity android:name=".activity.init.RegisterClientActivity" />
+
     </application>
 
 </manifest>

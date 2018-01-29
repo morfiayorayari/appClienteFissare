@@ -1,4 +1,4 @@
-package com.appclientefissare.activity;
+package com.appclientefissare.activity.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,13 +14,18 @@ import com.appclientefissare.R;
 
 import java.util.ArrayList;
 
-public class ProveedorFragment extends Fragment {
+
+public class PedidoFragment extends Fragment {
 
     ListView listView;
-    //ArrayList<String> lista;
     ArrayAdapter<String> adaptador;
+    ArrayList<String> lista = new ArrayList<>();
+    String URL = "http://fissare.ayniwork.com/appServiHogar/srv/web/login";
 
-    public ProveedorFragment(){
+
+
+
+    public PedidoFragment(){
         //Requiered empty public constructor
     }
 
@@ -28,11 +33,16 @@ public class ProveedorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_proveedor, container, false);
 
-        String[] proveedores = {"Prooveedor 1","Prooveedor 2","Prooveedor 3"};
-
+        View rootView = inflater.inflate(R.layout.fragment_pedido, container, false);
         listView = (ListView)rootView.findViewById(R.id.list_proveedor);
+
+        String[] proveedores = {"1 - 18/12/2017 Aceptado",
+                "2 - 20/12/2017 Terminado",
+                "3 - 05/01/2018 En proceso",
+                "4 - 10/01/2018 Terminado",
+                "5 - 11/01/2018 En proceso"};
+
 
         adaptador = new ArrayAdapter<String>(
                 getActivity(),
@@ -42,10 +52,11 @@ public class ProveedorFragment extends Fragment {
 
         listView.setAdapter(adaptador);
 
+
+
+
         return rootView;
     }
-
-
 
 
 
@@ -54,14 +65,11 @@ public class ProveedorFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener(){
+        view.findViewById(R.id.button_pedidos).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Toast.makeText(getActivity(), "Estas dentro de Proveedores", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Estas dentro de Pedidos", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
-
-
 }

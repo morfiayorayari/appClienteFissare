@@ -1,4 +1,4 @@
-package com.appclientefissare.activity;
+package com.appclientefissare.activity.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,24 +10,23 @@ import android.widget.Toast;
 
 import com.appclientefissare.R;
 
-public class CategoriaproveedorFragment extends Fragment {
+public class ServicioFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_categoriaproveedor, null);
+        return inflater.inflate(R.layout.fragment_servicio, null);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener(){
+        view.findViewById(R.id.button_servicio).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Toast.makeText(getActivity(), "Estas dentro de Categoria Proveedores", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Estas dentro de Servicios", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
-
 }

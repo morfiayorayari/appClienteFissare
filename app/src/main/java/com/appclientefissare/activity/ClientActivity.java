@@ -1,12 +1,9 @@
 package com.appclientefissare.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,11 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.appclientefissare.R;
-import com.appclientefissare.activity.CategoriaproveedorFragment;
-import com.appclientefissare.activity.CategoriaservicioFragment;
-import com.appclientefissare.activity.CategoryServiceFragment;
-import com.appclientefissare.activity.ProveedorFragment;
-import com.appclientefissare.activity.ServicioFragment;
+import com.appclientefissare.activity.fragments.CategoriaservicioFragment;
 
 public class ClientActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,10 +23,10 @@ public class ClientActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_client);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_client);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_cliente);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -45,7 +38,7 @@ public class ClientActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_cliente);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -83,29 +76,26 @@ public class ClientActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.nav_categoria_servicio) {
+        if (id == R.id.nav_categoria_servicio_cli) {
 
-            fragmentClient = new CategoryServiceFragment();
+            //fragmentClient = new CategoryServiceFragment();
+            fragmentClient = new CategoriaservicioFragment();
             getSupportActionBar().setTitle("Categoria Servicio");
 
-        } else if (id == R.id.nav_servicio) {
+        } else if (id == R.id.nav_servicio_cli) {
 
             //fragmentClient = new CategoryServiceFragment();
-            //getSupportActionBar().setTitle("Servicio");
+            getSupportActionBar().setTitle("Servicio");
 
-        } else if (id == R.id.nav_categoria_proveedor) {
-
-            //fragmentClient = new CategoryServiceFragment();
-            //getSupportActionBar().setTitle("Categoria Proveedor");
-
-        } else if (id == R.id.nav_proveedor) {
+        } else if (id == R.id.nav_nuevo_pedido_cli) {
 
             //fragmentClient = new CategoryServiceFragment();
-            //getSupportActionBar().setTitle("Proveedor");
+            getSupportActionBar().setTitle("Nuevo Pedido");
 
-        } else if (id == R.id.nav_nuevo_pedido) {
+        } else if (id == R.id.nav_estado_pedido_cli) {
 
-        } else if (id == R.id.nav_estado_pedido) {
+            //fragmentClient = new CategoryServiceFragment();
+            getSupportActionBar().setTitle("Estado Pedido");
 
         }
 
@@ -120,7 +110,7 @@ public class ClientActivity extends AppCompatActivity
         }
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_cliente);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

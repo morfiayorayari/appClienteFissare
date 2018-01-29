@@ -5,6 +5,14 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/nav_categoria_servicio"
+            android:icon="@drawable/ic_menu_categoria_proveedor"
+            android:title="Categoria Servicio" />
+        <item
+            android:id="@+id/nav_servicio_prov"
+            android:icon="@drawable/ic_menu_proveedor"
+            android:title="Servicios" />
+        <item
             android:id="@+id/nav_categoria_proveedor"
             android:icon="@drawable/ic_menu_categoria_proveedor"
             android:title="Categoria Proveedor" />

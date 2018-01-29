@@ -5,11 +5,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_categoria_servicio"
+            android:id="@+id/nav_categoria_servicio_cli"
             android:icon="@drawable/ic_menu_categoria_servicio"
             android:title="Categoria Servicio" />
         <item
-            android:id="@+id/nav_servicio"
+            android:id="@+id/nav_servicio_cli"
             android:icon="@drawable/ic_menu_servicio"
             android:title="Servicio" />
     </group>
@@ -17,13 +17,13 @@
     <item android:title="Pedidos">
         <menu>
             <item
-                android:id="@+id/nav_nuevo_pedido"
+                android:id="@+id/nav_nuevo_pedido_cli"
                 android:icon="@drawable/ic_menu_pedido"
                 android:title="Nuevo Pedido" />
             <item
-                android:id="@+id/nav_estado_pedido"
+                android:id="@+id/nav_estado_pedido_cli"
                 android:icon="@drawable/ic_menu_estado"
-                android:title="Nuevo Estado" />
+                android:title="Estado Pedidos" />
         </menu>
     </item>
 

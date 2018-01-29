@@ -1,4 +1,4 @@
-package com.appclientefissare.activity;
+package com.appclientefissare.activity.init;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +16,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.appclientefissare.MainActivity;
 import com.appclientefissare.R;
+import com.appclientefissare.activity.ClientActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +44,7 @@ public class LoginClienteActivity extends AppCompatActivity {
         loginButtonCliente = (Button)findViewById(R.id.loginButtonCliente);
         registerLinkCliente = (TextView)findViewById(R.id.registerLinkCliente);
 
-        getSupportActionBar().setTitle("Ingreso al Sistema (Cliente)");
+        getSupportActionBar().setTitle("Iniciar como Cliente");
 
         loginButtonCliente.setOnClickListener(new View.OnClickListener() {
             @Override

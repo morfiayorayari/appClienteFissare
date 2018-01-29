@@ -1,4 +1,4 @@
-package com.appclientefissare.activity;
+package com.appclientefissare.activity.init;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,8 +17,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import com.appclientefissare.MainActivity;
 import com.appclientefissare.R;
+import com.appclientefissare.activity.ProveedorActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity {
+public class LoginProveedorActivity extends AppCompatActivity {
 
     EditText emailBox, passwordBox;
     Button loginButton;
@@ -38,14 +38,14 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login_proveedor);
 
         emailBox = (EditText)findViewById(R.id.emailBox);
         passwordBox = (EditText)findViewById(R.id.passwordBox);
         loginButton = (Button)findViewById(R.id.loginButton);
         registerLink = (TextView)findViewById(R.id.registerLink);
 
-        getSupportActionBar().setTitle("Ingreso al Sistema");
+        getSupportActionBar().setTitle("Iniciar como Proveedor");
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,18 +54,18 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String s) {
                         if(s.equals("true")){
-                            Toast.makeText(LoginActivity.this, "Login Exitoso", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginProveedorActivity.this, "Login Exitoso", Toast.LENGTH_LONG).show();
 
-                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                            startActivity(new Intent(LoginProveedorActivity.this, ProveedorActivity.class));
                         }
                         else{
-                            Toast.makeText(LoginActivity.this, "Datos Incorrectos", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginProveedorActivity.this, "Datos Incorrectos", Toast.LENGTH_LONG).show();
                         }
                     }
                 },new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError volleyError) {
-                        Toast.makeText(LoginActivity.this, "Ocurrió un error -> "+volleyError, Toast.LENGTH_LONG).show();;
+                        Toast.makeText(LoginProveedorActivity.this, "Ocurrió un error -> "+volleyError, Toast.LENGTH_LONG).show();;
                     }
                 }) {
                     @Override
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 };
 
-                RequestQueue rQueue = Volley.newRequestQueue(LoginActivity.this);
+                RequestQueue rQueue = Volley.newRequestQueue(LoginProveedorActivity.this);
                 rQueue.add(request);
             }
         });
@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, PreregisterActivity.class));
+                startActivity(new Intent(LoginProveedorActivity.this, RegisterProveedorActivity.class));
             }
         });
     }

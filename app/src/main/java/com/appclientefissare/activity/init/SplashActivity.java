@@ -1,4 +1,4 @@
-package com.appclientefissare.activity;
+package com.appclientefissare.activity.init;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.appclientefissare.MainActivity;
 import com.wang.avi.AVLoadingIndicatorView;
 
 import com.appclientefissare.R;
@@ -33,8 +32,7 @@ public class SplashActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }finally{
                     Intent intent;
-                    intent = new Intent(SplashActivity.this, LoginActivity.class);
-                    //intent = new Intent(SplashActivity.this, MainActivity.class);
+                    intent = new Intent(SplashActivity.this, IngresarcomoActivity.class);
                     startActivity(intent);
                 }
             }

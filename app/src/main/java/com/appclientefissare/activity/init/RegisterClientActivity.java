@@ -1,4 +1,4 @@
-package com.appclientefissare.activity;
+package com.appclientefissare.activity.init;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.appclientefissare.R;
+import com.appclientefissare.activity.ClientActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -61,7 +62,7 @@ public class RegisterClientActivity extends AppCompatActivity {
         _acceptButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                registro();
+                //registro();
                 startActivity(new Intent(RegisterClientActivity.this, ClientActivity.class));
                 //Toast.makeText(RegisterClientActivity.this, "Registro Exitoso", Toast.LENGTH_LONG).show();
             }

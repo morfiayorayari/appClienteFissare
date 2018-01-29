@@ -1,4 +1,4 @@
-package com.appclientefissare.activity;
+package com.appclientefissare.activity.fragments;
 
 import android.content.Context;
 import android.net.Uri;
